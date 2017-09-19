@@ -60,110 +60,12 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 309);
+/******/ 	return __webpack_require__(__webpack_require__.s = 310);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 0:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box; }\n\nimg,\nvideo,\ncanvas {\n  max-width: 100%; }\n\nfooter,\nheader,\nsection {\n  font-family: Raleway, sans-serif;\n  display: block;\n  width: 100%; }\n\n.container {\n  background: #e6af4b;\n  text-align: center; }\n\n.header {\n  font-family: 'Roboto', sans-serif;\n  font-size: 1.5em;\n  width: 100%;\n  padding: 2em;\n  background: #e6cf8b;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n\n.heart {\n  color: red; }\n\n@keyframes showRndQuote {\n  0% {\n    opacity: 0;\n    transform: scale(0); }\n  100% {\n    opacity: 1;\n    transform: scale(1); } }\n\n.favQuotesSection {\n  margin: 0 auto;\n  width: 90vw; }\n  .favQuotesSection .favQuotesList {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    list-style-type: none; }\n\n.favQuote {\n  color: black;\n  background: #e05038;\n  border: 2px solid #c6371f;\n  padding: 1em;\n  opacity: 0;\n  margin: .5em 0;\n  width: 80vw;\n  max-width: 800px;\n  animation: show 1s forwards; }\n\n.footer {\n  background: lime;\n  width: 100%;\n  height: 60px; }\n\n@keyframes show {\n  0% {\n    opacity: 0;\n    transform: translate(0, -50%); }\n  100% {\n    opacity: 1;\n    transform: translate(0); } }\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 1:
-/***/ (function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
-
-
-/***/ }),
-
-/***/ 309:
+/***/ 310:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

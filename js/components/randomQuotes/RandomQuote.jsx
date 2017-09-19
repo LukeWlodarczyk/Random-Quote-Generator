@@ -10,11 +10,11 @@ class RandomQuote extends React.Component {
   }
 
 
-  componentDidUpdate() {
+  componentWillReceiveProps(nextProps) {
     this.setState({
-      author: this.props.quote.author,
-      quote: this.props.quote.quote,
-    }); 
+      author: nextProps.quote.author,
+      quote: nextProps.quote.quote,
+    });
   }
 
 

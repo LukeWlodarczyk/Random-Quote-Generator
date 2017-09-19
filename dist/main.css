@@ -19,6 +19,10 @@ section {
   background: #e6af4b;
   text-align: center; }
 
+body {
+  min-height: 100%;
+  background: #e6af4b; }
+
 .header {
   font-family: 'Roboto', sans-serif;
   font-size: 1.5em;

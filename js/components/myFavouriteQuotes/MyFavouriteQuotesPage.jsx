@@ -68,7 +68,7 @@ class MyFavouriteQuotesPage extends React.Component {
   componentDidUpdate() {
     this.addAnimationDelay()
   }
-
+ 
 
   onRemoveQuote = event => {
     let storageQuotes = JSON.parse(localStorage.getItem('quotes'));
