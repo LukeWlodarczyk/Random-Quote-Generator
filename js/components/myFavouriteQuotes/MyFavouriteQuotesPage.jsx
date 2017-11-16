@@ -49,7 +49,7 @@ export default class MyFavouriteQuotesPage extends React.Component {
 
   addAnimationDelay = () => {
 
-    let favQuotes = document.querySelectorAll('.favQuote');
+    const favQuotes = document.querySelectorAll('.favQuote');
     let delay = 0
     favQuotes.forEach((favQuote, index) => {
       favQuote.style.animationDelay = `${delay}s`
@@ -73,8 +73,8 @@ export default class MyFavouriteQuotesPage extends React.Component {
 
 
   onRemoveQuote = event => {
-    let storageQuotes = JSON.parse(localStorage.getItem('quotes'));
-    let updatedQuotes = storageQuotes.filter( quote => quote.quote != event.quote )
+    const storageQuotes = JSON.parse(localStorage.getItem('quotes'));
+    const updatedQuotes = storageQuotes.filter( quote => quote.quote != event.quote )
     localStorage.setItem('quotes', JSON.stringify(updatedQuotes));
     this.setState({
       myQuotes: updatedQuotes,
@@ -86,7 +86,7 @@ export default class MyFavouriteQuotesPage extends React.Component {
   }
 
   onCopyQuote = event => {
-    let textArea = document.createElement("textarea");
+    const textArea = document.createElement("textarea");
     textArea.value = `"${event.quote}" - ${event.author}`;
 
     document.body.appendChild(textArea);
@@ -94,8 +94,8 @@ export default class MyFavouriteQuotesPage extends React.Component {
     textArea.select();
 
     try {
-      let successful = document.execCommand('copy');
-      let msg = successful ? 'successful' : 'unsuccessful';
+      const successful = document.execCommand('copy');
+      const msg = successful ? 'successful' : 'unsuccessful';
 
       this.msg.show('Copying quote command was ' + msg, {
         time: 2000,
@@ -125,7 +125,7 @@ export default class MyFavouriteQuotesPage extends React.Component {
         </alert>
       </section>
     } else {
-      let favouriteQuotes = this.state.myQuotes.map((el, index) => {
+      const favouriteQuotes = this.state.myQuotes.map((el, index) => {
         return <MyFavouriteQuote key={ index } quote={ el } onRemoveQuote={ this.onRemoveQuote } onCopyQuote={ this.onCopyQuote }/>
       });
       return <section className = 'favQuotesSection'>
