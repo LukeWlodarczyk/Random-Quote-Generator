@@ -20,9 +20,9 @@ export default class QuotesButtons extends React.Component {
   handleAddFavouriteQuote = event => {
     event.preventDefault();
     if(typeof this.props.quote === 'object') {
-      let myQuotesList = JSON.parse(localStorage.getItem('quotes')) || [];
+      const myQuotesList = JSON.parse(localStorage.getItem('quotes')) || [];
       if(myQuotesList.filter( quote => quote.quote === this.props.quote.quote).length === 0)  {
-        let myUpdatedQuotesList = [this.props.quote,...myQuotesList];
+        const myUpdatedQuotesList = [this.props.quote,...myQuotesList];
         localStorage.setItem('quotes', JSON.stringify(myUpdatedQuotesList));
 
         this.msg.show('Your add new quote to your favourite list', {
