@@ -1,6 +1,6 @@
 import React from 'react';
 
-class GetRandomQuote extends React.Component {
+export default class GetRandomQuote extends React.Component {
 
 
   onHandleClick = () => {
@@ -11,10 +11,8 @@ class GetRandomQuote extends React.Component {
 
 
   render() {
-    return <button onClick = {this.onHandleClick}>Get Random Quote</button>
+    return <button className='getRandom' onClick = {this.onHandleClick}>Get Random Quote</button>
   }
 
 
 }
-
- module.exports = GetRandomQuote;

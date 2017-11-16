@@ -28,7 +28,7 @@ module.exports = {
                 exclude: /node_modules/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: ['css-loader', 'sass-loader']
+                    use: ['css-loader', 'postcss-loader', 'sass-loader']
                 })
 
             },
@@ -36,16 +36,6 @@ module.exports = {
               test: /\.(png|jpg|gif|svg)$/,
               loader: "url-loader?limit=1000000&name=images/[name].[ext]"
             }
-            // {
-            //   test: /\.(png|jpg|gif)$/,
-            //   exclude: /node_modules/,
-            //   use: [
-            //     {
-            //       loader: 'file-loader',
-            //       options: {}
-            //     }
-            //   ]
-            // }
         ]
     },
     plugins: [

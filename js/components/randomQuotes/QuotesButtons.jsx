@@ -5,7 +5,7 @@ import {
   IndexLink,
 } from 'react-router';
 
-class QuotesButtons extends React.Component {
+export default class QuotesButtons extends React.Component {
   constructor(props){
     super(props);
     this.alertOptions = {
@@ -42,11 +42,11 @@ class QuotesButtons extends React.Component {
 
   render() {
     return <section>
-        <div>
-          <button  onClick={ this.handleAddFavouriteQuote } >
-            <i className="fa fa-heart" aria-hidden="true"></i>
+        <div className='btnsContainer'>
+          <button className='btnAdd'  onClick={ this.handleAddFavouriteQuote } >
+            <i className="fa fa-heart heart" aria-hidden="true"></i>
             <span>Add to my favourite Quotes</span></button>
-          <Link to='/:favourites'>My Favourite Quotes</Link>
+          <Link className='favourites' to='/:favourites'>My Favourite Quotes</Link>
         </div>
       <alert>
         <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
@@ -54,5 +54,3 @@ class QuotesButtons extends React.Component {
   </section>
   }
 }
-
-module.exports = QuotesButtons;

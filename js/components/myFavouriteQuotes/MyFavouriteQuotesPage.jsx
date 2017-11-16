@@ -22,14 +22,16 @@ class MyFavouriteQuote extends React.Component {
   render() {
     return <li className = 'favQuote'>
       <span>{ this.props.quote.quote }</span>
-      <span>{ this.props.quote.author }</span>
-      <button onClick={ this.handleOnClickRemoveQuote }>Delete me!</button>
-      <button onClick={ this.handleOnClickCopyQuote }>Copy me!</button>
+      <span className='author'>{ this.props.quote.author }</span>
+      <div className='btns'>
+        <button onClick={ this.handleOnClickRemoveQuote }>Delete me!</button>
+        <button onClick={ this.handleOnClickCopyQuote }>Copy me!</button>
+      </div>
     </li>;
   }
 }
 
-class MyFavouriteQuotesPage extends React.Component {
+export default class MyFavouriteQuotesPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -68,7 +70,7 @@ class MyFavouriteQuotesPage extends React.Component {
   componentDidUpdate() {
     this.addAnimationDelay()
   }
- 
+
 
   onRemoveQuote = event => {
     let storageQuotes = JSON.parse(localStorage.getItem('quotes'));
@@ -113,10 +115,10 @@ class MyFavouriteQuotesPage extends React.Component {
   render() {
     if (this.state.myQuotes.length < 1) {
       return <section className = 'favQuotesSection'>
-        <p>Empty! :(</p>
-        <Link to='/'>
+        <p className='empty'>Empty! :(</p>
+        <Link className = 'back' to='/'>
           <i className="fa fa-arrow-circle-o-left" aria-hidden="true"></i>
-          <span className = 'back'>back to the Random Quote Generator</span>
+          <span>back to the Random Quote Generator</span>
         </Link>
         <alert>
           <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
@@ -131,9 +133,9 @@ class MyFavouriteQuotesPage extends React.Component {
         <ul className = 'favQuotesList'>
           {favouriteQuotes}
         </ul>
-        <Link to='/'>
+        <Link className = 'back' to='/'>
           <i className="fa fa-arrow-circle-o-left" aria-hidden="true"></i>
-          <span className = 'back'>back to the Random Quote Generator</span>
+          <span>back to the Random Quote Generator</span>
         </Link>
         <alert>
           <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
@@ -142,5 +144,3 @@ class MyFavouriteQuotesPage extends React.Component {
     }
   }
 }
-
-module.exports = MyFavouriteQuotesPage;

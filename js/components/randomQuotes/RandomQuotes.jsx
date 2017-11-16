@@ -3,7 +3,7 @@ import GetRandomQuote from './GetRandomQuote.jsx';
 import RandomQuote from './RandomQuote.jsx';
 import QuotesButtons from './QuotesButtons.jsx';
 
-class RandomQuotes extends React.Component {
+export default class RandomQuotes extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -43,7 +43,7 @@ class RandomQuotes extends React.Component {
       if(this.state.loading) {
         return null;
       } else {
-        return <div className = 'container'>
+        return <div className = 'randomQuotesContainer'>
           <GetRandomQuote onMyClick={this.getRandomQuote} />
           <RandomQuote quote = {this.state.quote} />
           <QuotesButtons quote = {this.state.quote}/>
@@ -51,5 +51,3 @@ class RandomQuotes extends React.Component {
       }
     }
 }
-
- module.exports = RandomQuotes;

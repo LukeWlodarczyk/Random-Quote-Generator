@@ -12,7 +12,7 @@ import {
   hashHistory
 } from 'react-router';
 
-class App extends React.Component {
+export default class App extends React.Component {
 
   render() {
     return <Router history={ hashHistory }>

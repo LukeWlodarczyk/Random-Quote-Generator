@@ -1,6 +1,6 @@
 import React from 'react';
 
-class RandomQuote extends React.Component {
+export default class RandomQuote extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,11 +21,9 @@ class RandomQuote extends React.Component {
 
   render() {
     return <section className='randomQuote'>
-      <p>{this.state.author}</p>
       <p>{this.state.quote}</p>
+      <p className='author'>{this.state.author}</p>
     </section>
 
   }
 }
-
-module.exports = RandomQuote;
